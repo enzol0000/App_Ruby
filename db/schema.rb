@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_21_094354) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_21_120033) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -25,10 +25,40 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_21_094354) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.bigint "club_id", null: false
+    t.integer "height"
+    t.string "draft"
+    t.string "post"
+    t.integer "min"
+    t.integer "ppg"
+    t.integer "reb"
+    t.integer "blk"
+    t.integer "stl"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_players_on_club_id"
+  end
+
+  create_table "players_clubs", force: :cascade do |t|
+    t.bigint "players_id", null: false
+    t.bigint "clubs_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clubs_id"], name: "index_players_clubs_on_clubs_id"
+    t.index ["players_id"], name: "index_players_clubs_on_players_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "pseudonyme"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "players", "clubs"
+  add_foreign_key "players_clubs", "clubs", column: "clubs_id"
+  add_foreign_key "players_clubs", "players", column: "players_id"
 end
