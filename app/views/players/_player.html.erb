@@ -1,11 +1,11 @@
 <div id="<%= dom_id player %>" class="container mt-4 mb-4">
   <div class="row">
     <div class="col-md-4">
-      <!-- Image du joueur avec une taille uniforme -->
-      <img src="<%= player.image %>" class="img-fluid rounded mx-auto d-block" style="max-height: 250px; width: auto;">
+
+      <img src="<%= player.image %>" class="img-fluid rounded mx-auto d-block" style="height: 250px; width: 250px; object-fit: cover;">
     </div>
     <div class="col-md-8">
-      <!-- Informations sur le joueur avec de l'espacement -->
+
       <p><strong>Name:</strong> <%= player.name %></p>
       <p><strong>Club:</strong> <%= link_to player.club, player.club %></p>
       <p><strong>Height:</strong> <%= player.height %></p>
@@ -17,10 +17,9 @@
       <p><strong>Blk:</strong> <%= player.blk %></p>
       <p><strong>Stl:</strong> <%= player.stl %></p>
 
-      <!-- Boutons stylisés mais épurés -->
+
       <div class="mt-3">
         <%= link_to 'Voir détails', player_path(player), class: 'btn btn-outline-primary' %>
-        <%= link_to 'Ajouter aux favoris', '#', class: 'btn btn-outline-secondary ml-2' %>
       </div>
     </div>
   </div>
