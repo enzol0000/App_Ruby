@@ -1,4 +1,5 @@
 .imageclub{
     height: auto;
     width: auto;
+    object-fit: cover;
 }
