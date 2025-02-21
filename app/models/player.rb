@@ -2,6 +2,6 @@ class Player < ApplicationRecord
   belongs_to :club
 
   def to_s
-    player.club
+    club
   end
 end
