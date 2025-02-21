@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  image: MyString
+  club: one
+  height: 1
+  draft: MyString
+  post: MyString
+  min: 1
+  ppg: 1
+  reb: 1
+  blk: 1
+  stl: 1
+
+two:
+  name: MyString
+  image: MyString
+  club: two
+  height: 1
+  draft: MyString
+  post: MyString
+  min: 1
+  ppg: 1
+  reb: 1
+  blk: 1
+  stl: 1

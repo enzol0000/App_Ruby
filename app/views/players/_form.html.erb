@@ -1,0 +1,23 @@
+
+<%= simple_form_for(@player) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :image %>
+    <%= f.association :club %>
+    <%= f.input :height %>
+    <%= f.input :draft %>
+    <%= f.input :post %>
+    <%= f.input :min %>
+    <%= f.input :ppg %>
+    <%= f.input :reb %>
+    <%= f.input :blk %>
+    <%= f.input :stl %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
